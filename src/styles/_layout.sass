@@ -1,0 +1,117 @@
+body
+  padding-left: $base-line-height
+  padding-right: $base-line-height
+
+img
+  max-width: 100%
+
+div, a
+  border-radius: 0 !important
+
+.highlight
+  margin-bottom: $base-line-height
+  pre
+    overflow: scroll
+    padding: $base-line-height / 2
+
+.site-nav
+  ul
+    margin-bottom: 0
+    +respond-to(smaller-screens)
+      margin-left: 0
+    li
+      display: inline
+      margin-left: 2ex
+
+.content
+  max-width: 70ex
+  margin: 0 auto
+
+// Title
+.title-container
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+  background-color: $blue
+  color: white
+  margin-left: -2rem
+  margin-right: -2rem
+  padding: 3rem 0 3rem 0
+  +respond-to(smaller-screens)
+    padding: 1rem 0 1rem 0
+
+
+.title-logo
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  flex: 1 1 0
+  justify-content: center
+  align-items: center
+  svg
+    margin-right: 1rem
+    margin-left: 1rem
+    height: 15ex
+    +respond-to(smaller-screens)
+      height: 16ex
+      padding: 2rem 0 1rem 0
+  #brown
+    .st2
+      fill: $light-gray-2
+  #logo
+    .st1
+      fill: $blue
+
+.title-group
+  flex: 2 1 0
+  padding-right: 5rem
+  padding-left: 5rem
+
+
+hr
+  margin-top: 2rem !important
+  margin-bottom: 2rem !important
+  border: 0
+  border-top: 1px solid $light-gray-2 !important
+
+footer
+  background-color: $dark-gray
+  height: 34ex
+  margin-left: -2rem
+  margin-right: -2rem
+
+.footer
+  padding: 4rem 0 2rem 8rem
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: flex-start
+  svg
+    margin-bottom: 1rem
+    height: 3rem
+    fill: $light-gray-2
+
+.copyright
+  color: $light-gray-2
+  font-family: "ff-avance-pro", sans-serif
+  text-align: center
+
+input
+    font-size: 1rem !important
+    font-weight: bold
+    margin-bottom: 12px
+    padding: 0.2rem
+    border: 0px
+    background-color: #efefef
+    width: 50%
+
+.header
+    background-color: #efefef
+
+::placeholder
+    color: black
+
+.table
+  margin-top: 2rem

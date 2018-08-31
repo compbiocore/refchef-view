@@ -1,0 +1,48 @@
+references:
+  - name: ucsc_hg19_concatenate
+    species: human
+    organization: ucsc
+    downloader: aleith
+    levels:
+      - level: primary
+        retrieve: true
+        commands:
+          - wget 'ftp://hgdownload.cse.ucsc.edu/goldenPath/hg19/chromosomes/*'
+          - md5 *.fa.gz > postdownload_checksums.md5
+          - gunzip *.gz
+          - cat *.fa > hg19.fa
+          - rm chr*.fa
+          - md5 *.fa > final_checksums.md5
+      - level: est
+        retrieve: true
+        commands:
+          - wget 'ftp://hgdownload.cse.ucsc.edu/goldenPath/hg19/bigZips/est.fa.gz*'
+          - md5 *.fa.gz > postdownload_checksums.md5
+          - gunzip *.gz
+          - md5 *.fa > final_checksums.md5
+  - name: ucsc_hg38
+    species: human
+    organization: ucsc
+    downloader: aleith
+    levels:
+      - level: primary
+        retrieve: true
+        commands:
+          - wget 'ftp://hgdownload.cse.ucsc.edu/goldenPath/hg38/chromosomes/*'
+          - md5 *.fa.gz > postdownload-checksums.md5
+          - gunzip *.gz
+          - md5 *.fa > final-checksums.md5
+  - name: ucsc_mm9
+    species: mouse
+    organization: ucsc
+    downloader: aleith
+    levels:
+      - level: primary
+        retrieve: true
+        commands:
+          - wget 'ftp://hgdownload.cse.ucsc.edu/goldenPath/mm9/chromosomes/*'
+          - md5 *.fa.gz > postdownload-checksums.md5
+          - gunzip *.gz
+          - cat *.fa > hg19.fa
+          - rm chr*.fa
+          - md5 *.fa > final-checksums.md5

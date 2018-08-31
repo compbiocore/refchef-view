@@ -1,0 +1,45 @@
+<table id="myTable" class="table table-bordered table-hover table-sm">
+  <tr class="header">
+    <th>
+      <input type="text" id="referenceInput" list="references" onkeyup="search('referenceInput', 0)" placeholder="Reference">
+      <datalist id="references">
+        {{ range .Site.Data.new }}
+        <option value="{{ .metadata.name }}">
+        {{ end }}
+      </datalist>
+    </th>
+    <th>
+      <input type="text" id="speciesInput" list="species" onkeyup="search('speciesInput', 1)" placeholder="Species">
+      <datalist id="species">
+        {{ range .Site.Data.new }}
+        <option value="{{ .metadata.species }}">
+        {{ end }}
+      </datalist>
+    </th>
+    <th>
+      <input type="text" id="orgInput" list="organizations" onkeyup="search('orgInput', 2)" placeholder="Organization">
+      <datalist id="organizations">
+        {{ range .Site.Data.new }}
+        <option value="{{ .metadata.organization }}">
+        {{ end }}
+      </datalist>
+    </th>
+    <th>
+      <input type="text" id="levelInput" list="types" onkeyup="search('levelInput', 3)" placeholder="Component">
+    </th>
+  </tr>
+  {{ range .Site.Data.new }}
+  <tr>
+    <td>{{ .metadata.name }}</td>
+    <td>{{ .metadata.species }}</td>
+    <td>{{ upper .metadata.organization }}</td>
+    <td>{{ range .levels }}
+          {{ range .references }}
+            <p>{{ .component }}</p>
+          {{ end }}
+        {{ end }}
+    </td>
+
+  </tr>
+  {{ end }}
+</table>
