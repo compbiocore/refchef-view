@@ -5,6 +5,7 @@
 - [Node](https://nodejs.org/en/)
 - [NPM](https://nodejs.org/en/)
 - [Gulp](https://gulpjs.com)
+- [Hugo](https://gohugo.io)
 
 
 ## Install Dependencies
