@@ -20,7 +20,7 @@
       <input type="text" id="orgInput" list="organizations" onkeyup="search('orgInput', 2)" placeholder="Organization">
       <datalist id="organizations">
         {{ range .Site.Data.new }}
-        <option value="{{ .metadata.organization }}">
+        <option value="{{ upper .metadata.organization }}">
         {{ end }}
       </datalist>
     </th>
