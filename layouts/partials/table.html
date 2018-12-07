@@ -3,7 +3,7 @@
     <th>
       <input type="text" id="referenceInput" list="references" onkeyup="search('referenceInput', 0)" placeholder="Reference">
       <datalist id="references">
-        {{ range .Site.Data.new }}
+        {{ range .Site.Data.master }}
         <option value="{{ .metadata.name }}">
         {{ end }}
       </datalist>
@@ -11,7 +11,7 @@
     <th>
       <input type="text" id="speciesInput" list="species" onkeyup="search('speciesInput', 1)" placeholder="Species">
       <datalist id="species">
-        {{ range .Site.Data.new }}
+        {{ range .Site.Data.master }}
         <option value="{{ .metadata.species }}">
         {{ end }}
       </datalist>
@@ -19,24 +19,29 @@
     <th>
       <input type="text" id="orgInput" list="organizations" onkeyup="search('orgInput', 2)" placeholder="Organization">
       <datalist id="organizations">
-        {{ range .Site.Data.new }}
+        {{ range .Site.Data.master }}
         <option value="{{ upper .metadata.organization }}">
         {{ end }}
       </datalist>
     </th>
     <th>
       <input type="text" id="levelInput" list="types" onkeyup="search('levelInput', 3)" placeholder="Component">
+      <datalist id="types">
+        {{ range .Site.Data.master }}
+            {{ range .levels.references }}
+                <option value="{{ .component }}">
+          {{ end }}
+        {{ end }}
+      </datalist>
     </th>
   </tr>
-  {{ range .Site.Data.new }}
+  {{ range .Site.Data.master }}
   <tr>
-    <td>{{ .metadata.name }}</td>
-    <td>{{ .metadata.species }}</td>
-    <td>{{ upper .metadata.organization }}</td>
-    <td>{{ range .levels }}
-          {{ range .references }}
+    <td><p>{{ .metadata.name }}</p></td>
+    <td><p>{{ .metadata.species }}</p></td>
+    <td><p>{{ upper .metadata.organization }}</p></td>
+    <td>{{ range .levels.references }}
             <p>{{ .component }}</p>
-          {{ end }}
         {{ end }}
     </td>
 

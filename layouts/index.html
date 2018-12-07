@@ -2,15 +2,17 @@
 <html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}" />
 {{ partial "head" . }}
 
-<body>
-
+<body class="university-nav-white">
+{{ partial "brown_nav" . }}
 {{ partial "header" . }}
 
 {{ partial "table" . }}
 
-</body>
 
 {{ partial "footer" . }}
+{{ partial "brown_footer" .}}
+</body>
+
 {{ partial "scripts" . }}
 
 </html>

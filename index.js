@@ -8,8 +8,8 @@ const yaml = require('js-yaml');
 const token = process.env.GITHUB_TOKEN;
 const user = process.env.USER;
 const organization = 'compbiocore';
-const repo = 'refchef';
-const file = 'end_result.yaml';
+const repo = 'ursa-references-refchef';
+const file = 'master.yaml';
 
 
 /**
@@ -33,5 +33,5 @@ const githubRequest = (path) => {
 
 githubRequest(`repos/${organization}/${repo}/contents/${file}`).then((value) => {
     const str = yaml.safeLoad(Base64.decode(value.content));
-    fs.writeFileSync('data/master.yml', JSON.stringify(str, null, 2));
+    fs.writeFileSync('data/master.yaml', JSON.stringify(str, null, 2));
 });
