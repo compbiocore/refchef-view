@@ -1,4 +1,4 @@
-<table id="myTable" class="table table-bordered table-hover table-sm">
+<table id="refTable" class="table table-bordered table-hover table-sm">
   <tr class="header">
     <th>
       <input type="text" id="referenceInput" list="references" onkeyup="search('referenceInput', 0)" placeholder="Reference">
@@ -28,8 +28,62 @@
       <input type="text" id="levelInput" list="types" onkeyup="search('levelInput', 3)" placeholder="Component">
       <datalist id="types">
         {{ range .Site.Data.master }}
+          {{ if .levels.references }}
             {{ range .levels.references }}
                 <option value="{{ .component }}">
+            {{ end }}
+          {{ else if .level.indices }}
+            {{ range .levels.indices }}
+                <option value="{{ .component }}">
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </datalist>
+    </th>
+    <th>
+      <input type="text" id="levelInput" list="types" onkeyup="search('levelInput', 3)" placeholder="Location">
+      <datalist id="types">
+        {{ range .Site.Data.master }}
+          {{ if .levels.references }}
+            {{ range .levels.references }}
+                <option value="{{ .location }}">
+            {{ end }}
+          {{ else if .level.indices }}
+            {{ range .levels.indices }}
+                <option value="{{ .location }}">
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </datalist>
+    </th>
+    <th>
+      <input type="text" id="levelInput" list="types" onkeyup="search('levelInput', 3)" placeholder="Files">
+      <datalist id="types">
+        {{ range .Site.Data.master }}
+          {{ if .levels.references }}
+            {{ range .levels.references }}
+                <option value="{{ .files }}">
+            {{ end }}
+          {{ else if .level.indices }}
+            {{ range .levels.indices }}
+                <option value="{{ .files }}">
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </datalist>
+    </th>
+    <th>
+      <input type="text" id="levelInput" list="types" onkeyup="search('levelInput', 3)" placeholder="UUID">
+      <datalist id="types">
+        {{ range .Site.Data.master }}
+          {{ if .levels.references }}
+            {{ range .levels.references }}
+                <option value="{{ .uuid }}">
+            {{ end }}
+          {{ else if .level.indices }}
+            {{ range .levels.indices }}
+                <option value="{{ .uuid }}">
+            {{ end }}
           {{ end }}
         {{ end }}
       </datalist>
@@ -40,11 +94,50 @@
     <td><p>{{ .metadata.name }}</p></td>
     <td><p>{{ .metadata.species }}</p></td>
     <td><p>{{ upper .metadata.organization }}</p></td>
-    <td>{{ range .levels.references }}
-            <p>{{ .component }}</p>
-        {{ end }}
-    </td>
-
+    {{ if .levels.references }}
+      <td>{{ range .levels.references }}
+              <p>{{ .component }}</p>
+          {{ end }}
+      </td>
+    {{ else if .levels.indices }}
+      <td>{{ range .levels.indices }}
+              <p>{{ .component }}</p>
+          {{ end }}
+      </td>
+    {{ end }}
+    {{ if .levels.references }}
+      <td>{{ range .levels.references }}
+              <p>{{ .location }}</p>
+          {{ end }}
+      </td>
+    {{ else if .levels.indices }}
+      <td>{{ range .levels.indices }}
+              <p>{{ .location }}</p>
+          {{ end }}
+      </td>
+    {{ end }}
+    {{ if .levels.references }}
+      <td>{{ range .levels.references }}
+              <p>{{ .files }}</p>
+          {{ end }}
+      </td>
+    {{ else if .levels.indices }}
+      <td>{{ range .levels.indices }}
+              <p>{{ .files }}</p>
+          {{ end }}
+      </td>
+    {{ end }}
+    {{ if .levels.references }}
+      <td>{{ range .levels.references }}
+              <p>{{ .uuid }}</p>
+          {{ end }}
+      </td>
+    {{ else if .levels.indices }}
+      <td>{{ range .levels.indices }}
+              <p>{{ .uuid }}</p>
+          {{ end }}
+      </td>
+    {{ end }}
   </tr>
   {{ end }}
 </table>

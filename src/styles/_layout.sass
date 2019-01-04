@@ -50,19 +50,28 @@ div, a
   justify-content: center
   align-items: center
   svg
-    margin-left: 8rem
-    height: 40ex
+    margin-left: 6rem
+    height: 32ex
     +respond-to(smaller-screens)
       height: 16ex
-      padding: 2rem 0 1rem 0
+      padding: 1rem 0 1rem 0
   #brown
     .st2-b
       fill: white
   #logo
+    height: 25ex
     .st0c
       fill: none
       stroke: white
       stroke-width: 2px
+  #dog
+    margin-left: 2rem !important
+
+    .st0
+      fill: none
+      stroke: white
+      stroke-width: 2px
+
 
 .title-group
   flex: 2 1 0
@@ -180,3 +189,22 @@ hr
 
 .search-btn-padding
   display: none !important
+
+
+#refTable
+  tr
+    th
+      padding: 0
+      input
+            height: 100%
+            width: 100%
+            padding: 0.8rem
+            font-weight: bold
+            border: none
+            background-color: $beige
+    td
+      p
+        font-family: parisine-std, sans-serif !important
+        line-height: 1rem
+        margin: 0 !important
+        padding: 0.4rem

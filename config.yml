@@ -4,7 +4,7 @@ title: "RefChef"
 
 # Site params
 params:
-    description: "List of Genome References available at URSA Stronghold and CCV's Oscar."
+    description: "List of Genome References available on URSA Stronghold and CCV's Oscar."
     email: cbc-help@brown.edu
     copyright: Computational Biology Core - Data Science Practice - Brown University
     organization: Computational Biology Core
