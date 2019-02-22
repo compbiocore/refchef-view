@@ -107,34 +107,34 @@
     {{ end }}
     {{ if .levels.references }}
       <td>{{ range .levels.references }}
-              <p>{{ .location }}</p>
+              <p><code>{{ .location }}</code></p>
           {{ end }}
       </td>
     {{ else if .levels.indices }}
       <td>{{ range .levels.indices }}
-              <p>{{ .location }}</p>
+              <p><code>{{ .location }}</code></p>
           {{ end }}
       </td>
     {{ end }}
     {{ if .levels.references }}
       <td>{{ range .levels.references }}
-              <p>{{ .files }}</p>
+              <p><code>{{ .files }}</code></p>
           {{ end }}
       </td>
     {{ else if .levels.indices }}
       <td>{{ range .levels.indices }}
-              <p>{{ .files }}</p>
+              <p><code>{{ .files }}</code></p>
           {{ end }}
       </td>
     {{ end }}
     {{ if .levels.references }}
       <td>{{ range .levels.references }}
-              <p>{{ .uuid }}</p>
+              <p><code>{{ .uuid }}</code></p>
           {{ end }}
       </td>
     {{ else if .levels.indices }}
       <td>{{ range .levels.indices }}
-              <p>{{ .uuid }}</p>
+              <p><code>{{ .uuid }}</code></p>
           {{ end }}
       </td>
     {{ end }}
