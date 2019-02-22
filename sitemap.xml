@@ -3,21 +3,21 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://example.org/default/</loc>
+    <loc>https://compbiocore.github.io/refchef-view/default/</loc>
   </url>
   
   <url>
-    <loc>http://example.org/categories/</loc>
+    <loc>https://compbiocore.github.io/refchef-view/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/</loc>
+    <loc>https://compbiocore.github.io/refchef-view/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://example.org/tags/</loc>
+    <loc>https://compbiocore.github.io/refchef-view/tags/</loc>
     <priority>0</priority>
   </url>
   
