@@ -1,3 +1,7 @@
+language: go
+go:
+  - "1.11"
+
 git:
   depth: 10
 
@@ -7,7 +11,6 @@ before_install:
   - sudo apt-get update
   - sudo apt-get install node -y
   - npm install -g gulp
-  - npm install -g travis-ci-cloudfront-invalidation
 
 install:
   - npm install
@@ -19,15 +22,10 @@ before_deploy:
   - gulp sass && hugo
 
 deploy:
-  - provider: s3
-    access_key_id: $AWS_ACCESS_KEY_ID
-    secret_access_key: $AWS_SECRET_ACCESS_KEY
-    bucket: $AWS_S3_BUCKET_PROD
-    skip_cleanup: true
-    local-dir: app
-    acl: public_read
+  - provider: pages
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN
+    keep-history: true
+    local-dir: docs
     on:
       branch: master
-
-# after_deploy:
-#   - if [[ $TRAVIS_BRANCH = "master" ]]; then travis-ci-cloudfront-invalidation -a $AWS_ACCESS_KEY_ID -s $AWS_SECRET_ACCESS_KEY -c $AWS_CLOUDFRONT_ID_PROD -i '/*' -b 'master' -p $TRAVIS_PULL_REQUEST; fi

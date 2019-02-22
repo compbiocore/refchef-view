@@ -1,6 +1,7 @@
 baseURL: "http://example.org/"
 languageCode: "en-us"
 title: "RefChef"
+publishDir: docs
 
 # Site params
 params:
