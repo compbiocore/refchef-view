@@ -1,4 +1,4 @@
-baseURL: "http://example.org/"
+baseURL: "https://compbiocore.github.io/refchef-view/"
 languageCode: "en-us"
 title: "RefChef"
 publishDir: docs
