@@ -7,8 +7,8 @@ const yaml = require('js-yaml');
 
 const token = process.env.GITHUB_TOKEN;
 const user = process.env.USER;
-const organization = 'fernandogelin';
-const repo = 'refchef-test';
+const organization = 'compbiocore';
+const repo = 'ursa-references-refchef';
 const file = 'master.yaml';
 
 
