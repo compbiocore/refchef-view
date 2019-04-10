@@ -4,6 +4,7 @@
   
   <url>
     <loc>https://compbiocore.github.io/refchef-view/default/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
