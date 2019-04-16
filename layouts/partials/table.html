@@ -78,13 +78,14 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+            {{ $name := .metadata.name }}
             <div class="modal-body">
-              <h6>Location:</h6>
-              <span>URSA-Stronghold: <code>/opt/browncis/refchef-references/data/</code></span>
               {{ if .levels.references }}
                 {{ range .levels.references }}
+                        <h6>Location:</h6>
+                        <span>URSA-Stronghold: <code>/opt/browncis/refchef-references/data/{{$name}}/{{.component}}/</code></span>
                         <p></p>
-                        <span>Oscar: <code>/gpfs/data/cbc/refchef_refs</code></span>
+                        <span>Oscar: <code>/gpfs/data/cbc/refchef_refs/{{$name}}/{{.component}}/</code></span>
                         <hr>
                         <span>Component: <strong>{{ .component }}</strong></span>
                         <hr>
