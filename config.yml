@@ -14,3 +14,14 @@ params:
     address: 3 Davol Sq., Providence RI 02903
     brown_url: "https://www.brown.edu"
     cbc_url: "https://cbc.brown.edu"
+    
+    menu:
+      cbc:
+        - name: Support
+          url: http://cbc.brown.edu/support/index.html
+        - name: Services
+          url: http://cbc.brown.edu/services/index.html
+        - name: Resources
+          url: http://cbc.brown.edu/resources/index.html
+        - name: About
+          url: http://cbc.brown.edu/about/index.html
