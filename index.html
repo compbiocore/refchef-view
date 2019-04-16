@@ -375,86 +375,8 @@
         
       </datalist>
     </th>
-
     <th>
-      <input type="text" id="levelInput" list="types" onkeyup="search('levelInput', 3)" placeholder="Files">
-      <datalist id="types">
-        
-          
-            
-                <option value="[postdownload-checksums.md5 metadata.txt final_checksums.md5]">
-            
-          
-        
-          
-            
-                <option value="[Drosophila_melanogaster.BDGP6.rel91 checksum.ensembl Drosophila_melanogaster.BDGP6.dna.toplevel.fa checksum.md5 metadata.txt final_checksums.md5 Drosophila_melanogaster.BDGP6.dna.toplevel.fa.gz CHECKSUMS]">
-            
-          
-        
-          
-            
-                <option value="[metadata.txt Homo_sapiens.GRCh37.dna.primary_assembly.fa.gz final_checksums.md5 Homo_sapiens.GRCh37.87.gtf.gz]">
-            
-          
-        
-          
-            
-                <option value="[Mus_musculus.GRCm38.89.gtf.gz Mus_musculus.GRCm38.dna.primary_assembly.fa metadata.txt Mus_musculus.GRCm38.89.gtf final_checksums.md5 Mus_musculus.GRCm38.dna.primary_assembly.fa.gz]">
-            
-                <option value="[salmon_index Mus_musculus.GRCm38.cdna.all.salmon3.fa metadata.txt Mus_musculus.GRCm38.cdna.all.fa.gz final_checksums.md5 Mus_musculus.GRCm38.cdna.all.salmon.fa Mus_musculus.GRCm38.cdna.all.salmon2.fa Mus_musculus.GRCm38.cdna.all.fa]">
-            
-          
-        
-          
-            
-                <option value="[caenorhabditis_elegans.PRJNA13758.WBPS8.genomic.fa.gz metadata.txt caenorhabditis_elegans.PRJNA13758.WBPS8.canonical_geneset.gtf final_checksums.md5 caenorhabditis_elegans.PRJNA13758.WBPS8.genomic.fa caenorhabditis_elegans.PRJNA13758.WBPS8.canonical_geneset.gtf.gz]">
-            
-                <option value="[salmon_index caenorhabditis_elegans.PRJNA13758.WBPS8.mRNA_transcripts.salmon3.fa metadata.txt caenorhabditis_elegans.PRJNA13758.WBPS8.mRNA_transcripts.salmon2.fa caenorhabditis_elegans.PRJNA13758.WBPS8.mRNA_transcripts.salmon.fa final_checksums.md5 caenorhabditis_elegans.PRJNA13758.WBPS8.mRNA_transcripts.fa.gz caenorhabditis_elegans.PRJNA13758.WBPS8.mRNA_transcripts.fa]">
-            
-          
-        
-      </datalist>
-    </th>
-    <th>
-      <input type="text" id="levelInput" list="types" onkeyup="search('levelInput', 3)" placeholder="UUID">
-      <datalist id="types">
-        
-          
-            
-                <option value="482c6e70-389e-3559-8c19-d86cac067060">
-            
-          
-        
-          
-            
-                <option value="6206259e-fe61-35a2-9773-6a491c17aa11">
-            
-          
-        
-          
-            
-                <option value="0ab28308-a055-353d-8368-d937e1f03cd6">
-            
-          
-        
-          
-            
-                <option value="be834f53-5d2c-3e0c-a98b-1f1c37e118d1">
-            
-                <option value="54a37969-f245-3a78-aec3-d2c6034bbd27">
-            
-          
-        
-          
-            
-                <option value="0e1f369b-e08b-3108-be7e-da6210f82ca7">
-            
-                <option value="b54b3aa0-26ab-3220-a10a-436960cf6f23">
-            
-          
-        
-      </datalist>
+      <input type="text" placeholder="Details">
     </th>
   </tr>
   
@@ -469,18 +391,53 @@
       </td>
     
 
-    
       <td>
-              <p><code>[postdownload-checksums.md5 metadata.txt final_checksums.md5]</code></p>
-          
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-warning rounded-circle" data-toggle="modal" data-target="#broad_bundle_hg19">
+            <span class="fas fa-plus"></span>
+          </button>
+        </div>
       </td>
-    
-    
-      <td>
-              <p><code>482c6e70-389e-3559-8c19-d86cac067060</code></p>
-          
-      </td>
-    
+
+      <div class="modal fade" id="broad_bundle_hg19" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-warning">
+              <h5 class="modal-title pb-2" id="exampleModalLongTitle">broad_bundle_hg19</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+                
+                        <h6>Location:</h6>
+                        <span>URSA-Stronghold: <code>/opt/browncis/refchef-references/data/</code></span>
+                        <p></p>
+                        <span>Oscar: <code>/gpfs/data/cbc/refchef_refs</code></span>
+                        <hr>
+                        <span>Component: <strong>primary</strong></span>
+                        <hr>
+                        <span>UUID: </span><code>482c6e70-389e-3559-8c19-d86cac067060</code>
+                        <hr>
+                        <span>Files:</span>
+                        <ul>
+                        
+                        <li><code>postdownload-checksums.md5</code></li>
+                        
+                        <li><code>metadata.txt</code></li>
+                        
+                        <li><code>final_checksums.md5</code></li>
+                        
+                        </ul>
+                    
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+
   </tr>
   
   <tr>
@@ -494,18 +451,63 @@
       </td>
     
 
-    
       <td>
-              <p><code>[Drosophila_melanogaster.BDGP6.rel91 checksum.ensembl Drosophila_melanogaster.BDGP6.dna.toplevel.fa checksum.md5 metadata.txt final_checksums.md5 Drosophila_melanogaster.BDGP6.dna.toplevel.fa.gz CHECKSUMS]</code></p>
-          
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-warning rounded-circle" data-toggle="modal" data-target="#drosophila-melanogaster.bdgp6rel9">
+            <span class="fas fa-plus"></span>
+          </button>
+        </div>
       </td>
-    
-    
-      <td>
-              <p><code>6206259e-fe61-35a2-9773-6a491c17aa11</code></p>
-          
-      </td>
-    
+
+      <div class="modal fade" id="drosophila-melanogaster.bdgp6rel9" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-warning">
+              <h5 class="modal-title pb-2" id="exampleModalLongTitle">drosophila-melanogaster.bdgp6rel9</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+                
+                        <h6>Location:</h6>
+                        <span>URSA-Stronghold: <code>/opt/browncis/refchef-references/data/</code></span>
+                        <p></p>
+                        <span>Oscar: <code>/gpfs/data/cbc/refchef_refs</code></span>
+                        <hr>
+                        <span>Component: <strong>primary</strong></span>
+                        <hr>
+                        <span>UUID: </span><code>6206259e-fe61-35a2-9773-6a491c17aa11</code>
+                        <hr>
+                        <span>Files:</span>
+                        <ul>
+                        
+                        <li><code>Drosophila_melanogaster.BDGP6.rel91</code></li>
+                        
+                        <li><code>checksum.ensembl</code></li>
+                        
+                        <li><code>Drosophila_melanogaster.BDGP6.dna.toplevel.fa</code></li>
+                        
+                        <li><code>checksum.md5</code></li>
+                        
+                        <li><code>metadata.txt</code></li>
+                        
+                        <li><code>final_checksums.md5</code></li>
+                        
+                        <li><code>Drosophila_melanogaster.BDGP6.dna.toplevel.fa.gz</code></li>
+                        
+                        <li><code>CHECKSUMS</code></li>
+                        
+                        </ul>
+                    
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+
   </tr>
   
   <tr>
@@ -519,18 +521,55 @@
       </td>
     
 
-    
       <td>
-              <p><code>[metadata.txt Homo_sapiens.GRCh37.dna.primary_assembly.fa.gz final_checksums.md5 Homo_sapiens.GRCh37.87.gtf.gz]</code></p>
-          
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-warning rounded-circle" data-toggle="modal" data-target="#grch37_release87">
+            <span class="fas fa-plus"></span>
+          </button>
+        </div>
       </td>
-    
-    
-      <td>
-              <p><code>0ab28308-a055-353d-8368-d937e1f03cd6</code></p>
-          
-      </td>
-    
+
+      <div class="modal fade" id="grch37_release87" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-warning">
+              <h5 class="modal-title pb-2" id="exampleModalLongTitle">grch37_release87</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+                
+                        <h6>Location:</h6>
+                        <span>URSA-Stronghold: <code>/opt/browncis/refchef-references/data/</code></span>
+                        <p></p>
+                        <span>Oscar: <code>/gpfs/data/cbc/refchef_refs</code></span>
+                        <hr>
+                        <span>Component: <strong>primary</strong></span>
+                        <hr>
+                        <span>UUID: </span><code>0ab28308-a055-353d-8368-d937e1f03cd6</code>
+                        <hr>
+                        <span>Files:</span>
+                        <ul>
+                        
+                        <li><code>metadata.txt</code></li>
+                        
+                        <li><code>Homo_sapiens.GRCh37.dna.primary_assembly.fa.gz</code></li>
+                        
+                        <li><code>final_checksums.md5</code></li>
+                        
+                        <li><code>Homo_sapiens.GRCh37.87.gtf.gz</code></li>
+                        
+                        </ul>
+                    
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+
   </tr>
   
   <tr>
@@ -546,22 +585,89 @@
       </td>
     
 
-    
       <td>
-              <p><code>[Mus_musculus.GRCm38.89.gtf.gz Mus_musculus.GRCm38.dna.primary_assembly.fa metadata.txt Mus_musculus.GRCm38.89.gtf final_checksums.md5 Mus_musculus.GRCm38.dna.primary_assembly.fa.gz]</code></p>
-          
-              <p><code>[salmon_index Mus_musculus.GRCm38.cdna.all.salmon3.fa metadata.txt Mus_musculus.GRCm38.cdna.all.fa.gz final_checksums.md5 Mus_musculus.GRCm38.cdna.all.salmon.fa Mus_musculus.GRCm38.cdna.all.salmon2.fa Mus_musculus.GRCm38.cdna.all.fa]</code></p>
-          
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-warning rounded-circle" data-toggle="modal" data-target="#grcm38.p5">
+            <span class="fas fa-plus"></span>
+          </button>
+        </div>
       </td>
-    
-    
-      <td>
-              <p><code>be834f53-5d2c-3e0c-a98b-1f1c37e118d1</code></p>
-          
-              <p><code>54a37969-f245-3a78-aec3-d2c6034bbd27</code></p>
-          
-      </td>
-    
+
+      <div class="modal fade" id="grcm38.p5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-warning">
+              <h5 class="modal-title pb-2" id="exampleModalLongTitle">grcm38.p5</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+                
+                        <h6>Location:</h6>
+                        <span>URSA-Stronghold: <code>/opt/browncis/refchef-references/data/</code></span>
+                        <p></p>
+                        <span>Oscar: <code>/gpfs/data/cbc/refchef_refs</code></span>
+                        <hr>
+                        <span>Component: <strong>primary</strong></span>
+                        <hr>
+                        <span>UUID: </span><code>be834f53-5d2c-3e0c-a98b-1f1c37e118d1</code>
+                        <hr>
+                        <span>Files:</span>
+                        <ul>
+                        
+                        <li><code>Mus_musculus.GRCm38.89.gtf.gz</code></li>
+                        
+                        <li><code>Mus_musculus.GRCm38.dna.primary_assembly.fa</code></li>
+                        
+                        <li><code>metadata.txt</code></li>
+                        
+                        <li><code>Mus_musculus.GRCm38.89.gtf</code></li>
+                        
+                        <li><code>final_checksums.md5</code></li>
+                        
+                        <li><code>Mus_musculus.GRCm38.dna.primary_assembly.fa.gz</code></li>
+                        
+                        </ul>
+                    
+                        <h6>Location:</h6>
+                        <span>URSA-Stronghold: <code>/opt/browncis/refchef-references/data/</code></span>
+                        <p></p>
+                        <span>Oscar: <code>/gpfs/data/cbc/refchef_refs</code></span>
+                        <hr>
+                        <span>Component: <strong>cdna-trandscriptome</strong></span>
+                        <hr>
+                        <span>UUID: </span><code>54a37969-f245-3a78-aec3-d2c6034bbd27</code>
+                        <hr>
+                        <span>Files:</span>
+                        <ul>
+                        
+                        <li><code>salmon_index</code></li>
+                        
+                        <li><code>Mus_musculus.GRCm38.cdna.all.salmon3.fa</code></li>
+                        
+                        <li><code>metadata.txt</code></li>
+                        
+                        <li><code>Mus_musculus.GRCm38.cdna.all.fa.gz</code></li>
+                        
+                        <li><code>final_checksums.md5</code></li>
+                        
+                        <li><code>Mus_musculus.GRCm38.cdna.all.salmon.fa</code></li>
+                        
+                        <li><code>Mus_musculus.GRCm38.cdna.all.salmon2.fa</code></li>
+                        
+                        <li><code>Mus_musculus.GRCm38.cdna.all.fa</code></li>
+                        
+                        </ul>
+                    
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+
   </tr>
   
   <tr>
@@ -577,22 +683,89 @@
       </td>
     
 
-    
       <td>
-              <p><code>[caenorhabditis_elegans.PRJNA13758.WBPS8.genomic.fa.gz metadata.txt caenorhabditis_elegans.PRJNA13758.WBPS8.canonical_geneset.gtf final_checksums.md5 caenorhabditis_elegans.PRJNA13758.WBPS8.genomic.fa caenorhabditis_elegans.PRJNA13758.WBPS8.canonical_geneset.gtf.gz]</code></p>
-          
-              <p><code>[salmon_index caenorhabditis_elegans.PRJNA13758.WBPS8.mRNA_transcripts.salmon3.fa metadata.txt caenorhabditis_elegans.PRJNA13758.WBPS8.mRNA_transcripts.salmon2.fa caenorhabditis_elegans.PRJNA13758.WBPS8.mRNA_transcripts.salmon.fa final_checksums.md5 caenorhabditis_elegans.PRJNA13758.WBPS8.mRNA_transcripts.fa.gz caenorhabditis_elegans.PRJNA13758.WBPS8.mRNA_transcripts.fa]</code></p>
-          
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-warning rounded-circle" data-toggle="modal" data-target="#wbps8_ws256">
+            <span class="fas fa-plus"></span>
+          </button>
+        </div>
       </td>
-    
-    
-      <td>
-              <p><code>0e1f369b-e08b-3108-be7e-da6210f82ca7</code></p>
-          
-              <p><code>b54b3aa0-26ab-3220-a10a-436960cf6f23</code></p>
-          
-      </td>
-    
+
+      <div class="modal fade" id="wbps8_ws256" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-warning">
+              <h5 class="modal-title pb-2" id="exampleModalLongTitle">wbps8_ws256</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              
+                
+                        <h6>Location:</h6>
+                        <span>URSA-Stronghold: <code>/opt/browncis/refchef-references/data/</code></span>
+                        <p></p>
+                        <span>Oscar: <code>/gpfs/data/cbc/refchef_refs</code></span>
+                        <hr>
+                        <span>Component: <strong>primary</strong></span>
+                        <hr>
+                        <span>UUID: </span><code>0e1f369b-e08b-3108-be7e-da6210f82ca7</code>
+                        <hr>
+                        <span>Files:</span>
+                        <ul>
+                        
+                        <li><code>caenorhabditis_elegans.PRJNA13758.WBPS8.genomic.fa.gz</code></li>
+                        
+                        <li><code>metadata.txt</code></li>
+                        
+                        <li><code>caenorhabditis_elegans.PRJNA13758.WBPS8.canonical_geneset.gtf</code></li>
+                        
+                        <li><code>final_checksums.md5</code></li>
+                        
+                        <li><code>caenorhabditis_elegans.PRJNA13758.WBPS8.genomic.fa</code></li>
+                        
+                        <li><code>caenorhabditis_elegans.PRJNA13758.WBPS8.canonical_geneset.gtf.gz</code></li>
+                        
+                        </ul>
+                    
+                        <h6>Location:</h6>
+                        <span>URSA-Stronghold: <code>/opt/browncis/refchef-references/data/</code></span>
+                        <p></p>
+                        <span>Oscar: <code>/gpfs/data/cbc/refchef_refs</code></span>
+                        <hr>
+                        <span>Component: <strong>cdna-trandscriptome</strong></span>
+                        <hr>
+                        <span>UUID: </span><code>b54b3aa0-26ab-3220-a10a-436960cf6f23</code>
+                        <hr>
+                        <span>Files:</span>
+                        <ul>
+                        
+                        <li><code>salmon_index</code></li>
+                        
+                        <li><code>caenorhabditis_elegans.PRJNA13758.WBPS8.mRNA_transcripts.salmon3.fa</code></li>
+                        
+                        <li><code>metadata.txt</code></li>
+                        
+                        <li><code>caenorhabditis_elegans.PRJNA13758.WBPS8.mRNA_transcripts.salmon2.fa</code></li>
+                        
+                        <li><code>caenorhabditis_elegans.PRJNA13758.WBPS8.mRNA_transcripts.salmon.fa</code></li>
+                        
+                        <li><code>final_checksums.md5</code></li>
+                        
+                        <li><code>caenorhabditis_elegans.PRJNA13758.WBPS8.mRNA_transcripts.fa.gz</code></li>
+                        
+                        <li><code>caenorhabditis_elegans.PRJNA13758.WBPS8.mRNA_transcripts.fa</code></li>
+                        
+                        </ul>
+                    
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+
   </tr>
   
 </table>
