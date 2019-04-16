@@ -40,38 +40,8 @@
         {{ end }}
       </datalist>
     </th>
-
     <th>
-      <input type="text" id="levelInput" list="types" onkeyup="search('levelInput', 3)" placeholder="Files">
-      <datalist id="types">
-        {{ range .Site.Data.master }}
-          {{ if .levels.references }}
-            {{ range .levels.references }}
-                <option value="{{ .files }}">
-            {{ end }}
-          {{ else if .level.indices }}
-            {{ range .levels.indices }}
-                <option value="{{ .files }}">
-            {{ end }}
-          {{ end }}
-        {{ end }}
-      </datalist>
-    </th>
-    <th>
-      <input type="text" id="levelInput" list="types" onkeyup="search('levelInput', 3)" placeholder="UUID">
-      <datalist id="types">
-        {{ range .Site.Data.master }}
-          {{ if .levels.references }}
-            {{ range .levels.references }}
-                <option value="{{ .uuid }}">
-            {{ end }}
-          {{ else if .level.indices }}
-            {{ range .levels.indices }}
-                <option value="{{ .uuid }}">
-            {{ end }}
-          {{ end }}
-        {{ end }}
-      </datalist>
+      <input type="text" placeholder="Details">
     </th>
   </tr>
   {{ range .Site.Data.master }}
@@ -91,28 +61,62 @@
       </td>
     {{ end }}
 
-    {{ if .levels.references }}
-      <td>{{ range .levels.references }}
-              <p><code>{{ .files }}</code></p>
-          {{ end }}
+      <td>
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-warning rounded-circle" data-toggle="modal" data-target="#{{.metadata.name}}">
+            <span class="fas fa-plus"></span>
+          </button>
+        </div>
       </td>
-    {{ else if .levels.indices }}
-      <td>{{ range .levels.indices }}
-              <p><code>{{ .files }}</code></p>
-          {{ end }}
-      </td>
-    {{ end }}
-    {{ if .levels.references }}
-      <td>{{ range .levels.references }}
-              <p><code>{{ .uuid }}</code></p>
-          {{ end }}
-      </td>
-    {{ else if .levels.indices }}
-      <td>{{ range .levels.indices }}
-              <p><code>{{ .uuid }}</code></p>
-          {{ end }}
-      </td>
-    {{ end }}
+
+      <div class="modal fade" id="{{.metadata.name}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header bg-warning">
+              <h5 class="modal-title pb-2" id="exampleModalLongTitle">{{.metadata.name}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              {{ if .levels.references }}
+                {{ range .levels.references }}
+                        <h6>Location:</h6>
+                        <span>URSA-Stronghold: <code>/opt/browncis/refchef-references/data/</code></span>
+                        <p></p>
+                        <span>Oscar: <code>/gpfs/data/cbc/refchef_refs</code></span>
+                        <hr>
+                        <span>Component: <strong>{{ .component }}</strong></span>
+                        <hr>
+                        <span>UUID: </span><code>{{ .uuid }}</code>
+                        <hr>
+                        <span>Files:</span>
+                        <ul>
+                        {{ range .files }}
+                        <li><code>{{ . }}</code></li>
+                        {{ end }}
+                        </ul>
+                    {{ end }}
+              {{ else if .levels.indices }}
+                {{ range .levels.indices }}
+                        <h4 class="pb-4">{{ .component }}</h4>
+                        <hr>
+                        <span>UUID: </span><code>{{ .uuid }}</code>
+                        <hr>
+                        <h5>Files:</h5>
+                        <ul>
+                        {{ range .files }}
+                        <li><code>{{ . }}</code></li>
+                        {{ end }}
+                        </ul>
+                    {{ end }}
+              {{ end }}
+            </div>
+
+          </div>
+        </div>
+      </div>
+
   </tr>
   {{ end }}
 </table>
