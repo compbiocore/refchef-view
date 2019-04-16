@@ -93,7 +93,9 @@
                         <span>Files:</span>
                         <ul>
                         {{ range .files }}
+                        {{ if not (in . "check")}}
                         <li><code>{{ . }}</code></li>
+                        {{ end }}
                         {{ end }}
                         </ul>
                     {{ end }}
