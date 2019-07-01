@@ -10,10 +10,11 @@ params:
     copyright: Computational Biology Core - Data Science Practice - Brown University
     organization:
         main: Computational Biology Core
-        parent: Center for Computation and Visualization
+        parent: Center for Computational Biology of Human Disease
     address: 3 Davol Sq., Providence RI 02903
     brown_url: "https://www.brown.edu"
     cbc_url: "https://cbc.brown.edu"
+
 
     menu:
       cbc:
@@ -27,3 +28,10 @@ params:
           url: https://cbc.brown.edu/resources/
         - name: Blog
           url: https://cbc.brown.edu/blog/
+
+    footer:
+      secondcolumn:
+      - "**Acknowledgements**"
+      - Research reported on this website is supported by an Institutional Development
+        Award (IDeA) from the National Institute of General Medical Sciences of the
+        National Institutes of Health under grant number P20GM109035.
