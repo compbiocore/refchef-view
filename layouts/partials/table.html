@@ -9,10 +9,10 @@
       </datalist>
     </th>
     <th>
-      <input type="text" id="speciesInput" list="species" onkeyup="search('speciesInput', 1)" placeholder="Species">
+      <input type="text" id="speciesInput" list="species" onkeyup="search('speciesInput', 1)" placeholder="Organism">
       <datalist id="species">
         {{ range .Site.Data.master }}
-        <option value="{{ .metadata.species }}">
+        <option value="{{ .metadata.organism }}">
         {{ end }}
       </datalist>
     </th>
@@ -47,7 +47,7 @@
   {{ range .Site.Data.master }}
   <tr>
     <td><p>{{ .metadata.name }}</p></td>
-    <td><p>{{ .metadata.species }}</p></td>
+    <td><p>{{ .metadata.organism }}</p></td>
     <td><p>{{ upper .metadata.organization }}</p></td>
     {{ if .levels.references }}
       <td>{{ range .levels.references }}
@@ -73,7 +73,15 @@
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
           <div class="modal-content">
             <div class="modal-header bg-warning">
-              <h5 class="modal-title pb-2" id="exampleModalLongTitle">{{.metadata.name}}</h5>
+              <div class="d-flex flex-column">
+              <h5 class="modal-title pb-2 mb-2" id="exampleModalLongTitle">{{.metadata.name}}</h5>
+              {{with .metadata.accession.genbank }}
+              <span class="badge badge-primary mb-1 w-75">Genbank: {{.}}</span>
+              {{ end }}
+              {{with .metadata.accession.refseq }}
+              <span class="badge badge-primary mb-1 w-75">RefSeq: {{.}}</span>
+              {{ end }}
+              </div>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
